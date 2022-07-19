@@ -1,12 +1,7 @@
-### `npm run json-server`
+### `npm run dev`
 
-Runs json data base. \
-Note: need to install "npm install -g json-server". \
-db.json partially copies [https://jsonplaceholder.typicode.com/](https://jsonplaceholder.typicode.com/) data. \
-Open [http://localhost:4000](http://localhost:4000) to view it in the browser.
-
-### `npm start`
-
-Runs the app in the development mode.\
+Runs two process:
+1 json-server on [http://localhost:4000](http://localhost:4000)
+2 react app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 

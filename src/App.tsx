@@ -1,9 +1,10 @@
 import React from 'react';
+import PostsContainer from './components/PostsContainer';
 
 function App() {
   return (
     <div>
-      123
+      <PostsContainer />
     </div>
   );
 }
