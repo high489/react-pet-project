@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { IPost } from '../../models/IPost'
 
 export const postsApi = createApi({
-  reducerPath: 'postsAPI',
+  reducerPath: 'postsApi',
   baseQuery: fetchBaseQuery({baseUrl: 'http://localhost:4000'}),
   tagTypes: ['Post'],
   endpoints: (build) => ({

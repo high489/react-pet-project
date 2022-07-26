@@ -1,9 +1,9 @@
 import React, { FC, useState } from 'react';
-import { IPost } from '../models/IPost';
-import { postsApi } from '../store/services/PostsService';
+import { IPost } from '../../models/IPost';
+import { postsApi } from '../../store/services/PostsService';
 import PostItem from './PostItem';
 
-const PostsContainer: FC = () => {
+const PostsList: FC = () => {
   const [limit, setLimit] = useState(30)
   const {data: posts, error, isLoading} = postsApi.useFetchAllPostsQuery(limit)
   const [createPost, {}] = postsApi.useCreatePostMutation()
@@ -42,4 +42,4 @@ const PostsContainer: FC = () => {
   );
 };
 
-export default PostsContainer;
+export default PostsList;

@@ -1,10 +1,13 @@
 import React from 'react';
-import PostsContainer from './components/PostsContainer';
+import PostsList from './components/Posts/PostsList';
+import UsersList from './components/Users/UsersList';
 
 function App() {
   return (
     <div>
-      <PostsContainer />
+      <PostsList />
+      <hr />
+      <UsersList />
     </div>
   );
 }
