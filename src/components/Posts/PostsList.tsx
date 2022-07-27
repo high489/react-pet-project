@@ -1,14 +1,19 @@
 import React, { FC, useState } from 'react';
 import { IPost } from '../../models/IPost';
-import { postsApi } from '../../store/services/PostsService';
 import PostItem from './PostItem';
+import { 
+  useGetPostsQuery, 
+  useCreatePostMutation, 
+  useUpdatePostMutation, 
+  useDeletePostMutation
+} from '../../store';
 
 const PostsList: FC = () => {
   const [limit, setLimit] = useState(30)
-  const {data: posts, error, isLoading} = postsApi.useFetchAllPostsQuery(limit)
-  const [createPost, {}] = postsApi.useCreatePostMutation()
-  const [updatePost, {}] = postsApi.useUpdatePostMutation()
-  const [deletePost, {}] = postsApi.useDeletePostMutation()
+  const {data: posts, error, isLoading} = useGetPostsQuery(limit)
+  const [createPost, {}] = useCreatePostMutation()
+  const [updatePost, {}] = useUpdatePostMutation()
+  const [deletePost, {}] = useDeletePostMutation()
 
   const handleCreate = async () => {
     const title = prompt()

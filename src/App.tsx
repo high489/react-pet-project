@@ -1,10 +1,13 @@
 import React from 'react';
 import PostsList from './components/Posts/PostsList';
+import TodosList from './components/Todos/TodosList';
 import UsersList from './components/Users/UsersList';
 
 function App() {
   return (
     <div>
+      <TodosList />
+      <hr />
       <PostsList />
       <hr />
       <UsersList />

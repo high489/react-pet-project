@@ -1,9 +1,10 @@
 import React, { FC } from 'react';
-import { usersApi } from '../../store/services/UsersService';
+import { useGetUsersQuery } from '../../store';
 import UserItem from './UserItem';
 
 const UsersList: FC = () => {
-  const {data: users} = usersApi.useFetchAllUsersQuery(5)
+  const {data: users} = useGetUsersQuery(3)
+
   return (
     <div>
       {users && users.map(user => 
