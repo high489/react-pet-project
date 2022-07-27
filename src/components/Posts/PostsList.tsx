@@ -33,9 +33,10 @@ const PostsList: FC = () => {
       <div className="posts__list">
         {isLoading && <h1>Loading...</h1>}
         {error && <h1>Error</h1>}
-        {posts && posts.map(post =>
+        {posts && posts.map((post, index) =>
           <PostItem 
             key={post.id}
+            number={index + 1}
             post={post}
             remove={handleRemove}
             update={handleUpdate}

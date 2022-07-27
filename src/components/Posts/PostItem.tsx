@@ -2,12 +2,13 @@ import React, { FC } from 'react';
 import { IPost } from '../../models/IPost';
 
 interface PostItemProps {
+  number: number;
   post: IPost;
   remove: (post: IPost) => void;
   update: (post: IPost) => void;
 }
 
-const PostItem: FC<PostItemProps> = ({post, remove, update}) => {
+const PostItem: FC<PostItemProps> = ({number, post, remove, update}) => {
 
   const handleRemove = (event: React.MouseEvent) => {
     event.stopPropagation();
@@ -21,7 +22,7 @@ const PostItem: FC<PostItemProps> = ({post, remove, update}) => {
 
   return (
     <div className='post' onClick={handleUpdate}>
-      {post.id}. {post.title}
+      {number}. {post.title}
       <button onClick={handleRemove}>Delete</button>
     </div>
   );

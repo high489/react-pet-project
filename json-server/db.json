@@ -522,20 +522,8 @@
     },
     {
       "userId": 1,
-      "id": 5,
-      "title": "",
-      "completed": false
-    },
-    {
-      "userId": 1,
       "id": 6,
       "title": "qui ullam ratione quibusdam voluptatem quia omnis",
-      "completed": false
-    },
-    {
-      "userId": 1,
-      "id": 7,
-      "title": "illo expedita consequatur quia in",
       "completed": false
     },
     {
@@ -1094,6 +1082,11 @@
       "userId": 5,
       "id": 100,
       "title": "excepturi a et neque qui expedita vel voluptate",
+      "completed": false
+    },
+    {
+      "id": 1658923071866,
+      "title": "new todo 1",
       "completed": false
     }
   ],

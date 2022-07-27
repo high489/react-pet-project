@@ -19,7 +19,7 @@ const TodosList: FC = () => {
   const handleCreateTodo = async () => {
     if (newTodo) {
       await createTodo({ 
-        id: todos.length + 1 /* Date.now() */,
+        id: Date.now(),
         title: newTodo,
         completed: false,
       } as ITodo).unwrap()
@@ -53,9 +53,10 @@ const TodosList: FC = () => {
         onChange={(e: any) => setNewTodo(e.target.value)}
       />
       <button onClick={handleCreateTodo}>Create Todo</button>
-      {todos && todos.map(todo => 
+      {todos && todos.map((todo, index) => 
         <TodoItem 
           key={todo.id}
+          number={index + 1}
           todo={todo}
           update={handleUpdateTodo}
           remove={handleRemoveTodo}

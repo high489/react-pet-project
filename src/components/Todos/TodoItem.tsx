@@ -2,12 +2,13 @@ import React, { FC } from 'react';
 import { ITodo } from '../../models/ITodo';
 
 interface TodoItemProps {
+  number: number;
   todo: ITodo;
   update: (todo: ITodo) => void;
   remove: (todo: ITodo) => void;
 }
 
-const TodoItem: FC<TodoItemProps> = ({todo, update, remove}) => {
+const TodoItem: FC<TodoItemProps> = ({number, todo, update, remove}) => {
   const handleUpdateCompleted = (event: React.ChangeEvent) => {
     update({...todo, completed: !todo.completed})
   }
@@ -25,8 +26,8 @@ const TodoItem: FC<TodoItemProps> = ({todo, update, remove}) => {
   return (
     <div>
       <input type="checkbox" checked={todo.completed} onChange={handleUpdateCompleted} />
-      <span onClick={handleUpdateTitle}>{todo.id}. {todo.title}</span>
-      <button onClick={handleRemove}>X</button>
+      <span onClick={handleUpdateTitle}>{number}. {todo.title}</span>
+      <span onClick={handleRemove}> &times;</span>
     </div>
   );
 };
