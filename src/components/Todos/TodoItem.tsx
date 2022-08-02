@@ -27,9 +27,14 @@ const TodoItem: FC<TodoItemProps> = ({number, todo, update, remove}) => {
     <div>
       <input type="checkbox" checked={todo.completed} onChange={handleUpdateCompleted} />
       <span onClick={handleUpdateTitle}>{number}. {todo.title}</span>
-      <span onClick={handleRemove}> &times;</span>
+      <span
+        style={{color: 'red', marginLeft: 5}}
+        onClick={handleRemove}
+      > 
+        &times;
+      </span>
     </div>
   );
 };
 
-export default TodoItem;
+export { TodoItem };

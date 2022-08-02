@@ -28,4 +28,4 @@ const PostItem: FC<PostItemProps> = ({number, post, remove, update}) => {
   );
 };
 
-export default PostItem;
+export { PostItem };

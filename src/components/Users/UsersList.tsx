@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { useGetUsersQuery } from '../../store';
-import UserItem from './UserItem';
+import { UserItem } from './UserItem';
 
 const UsersList: FC = () => {
   const {data: users} = useGetUsersQuery(3)
@@ -14,4 +14,4 @@ const UsersList: FC = () => {
   );
 };
 
-export default UsersList;
+export { UsersList };

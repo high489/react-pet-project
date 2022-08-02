@@ -6,21 +6,21 @@ import {
   useUpdateTodoMutation,
   useDeleteTodoMutation,
 } from '../../store';
-import TodoItem from './TodoItem';
+import { TodoItem } from './TodoItem';
 
 const TodosList: FC = () => {
   const [todosLimit, setTodosLimit] = useState()
-  const [newTodo, setNewTodo] = useState('')
+  const [newTodoTitle, setNewTodo] = useState('')
   const {data: todos = [], error, isLoading} = useGetTodosQuery(todosLimit)
   const [createTodo, {}] = useCreateTodoMutation()
   const [updateTodo, {}] = useUpdateTodoMutation()
   const [deleteTodo, {}] = useDeleteTodoMutation()
 
   const handleCreateTodo = async () => {
-    if (newTodo) {
+    if (newTodoTitle) {
       await createTodo({ 
         id: Date.now(),
-        title: newTodo,
+        title: newTodoTitle,
         completed: false,
       } as ITodo).unwrap()
       setNewTodo('')
@@ -49,7 +49,7 @@ const TodosList: FC = () => {
       </div>
       <input 
         type="text"
-        value={newTodo}
+        value={newTodoTitle}
         onChange={(e: any) => setNewTodo(e.target.value)}
       />
       <button onClick={handleCreateTodo}>Create Todo</button>
@@ -67,4 +67,4 @@ const TodosList: FC = () => {
   );
 };
 
-export default TodosList;
+export { TodosList };

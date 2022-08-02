@@ -13,4 +13,4 @@ const UserItem: FC<UserItemProps> = ({user}) => {
   );
 };
 
-export default UserItem;
+export { UserItem };

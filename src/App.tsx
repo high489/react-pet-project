@@ -1,17 +1,25 @@
 import React from 'react';
-import PostsList from './components/Posts/PostsList';
-import TodosList from './components/Todos/TodosList';
-import UsersList from './components/Users/UsersList';
+import { Route, Routes } from 'react-router-dom';
+import { Layout } from './components/router/Layout';
+import Home from './views/Home';
+import Users from './views/Users';
+import Posts from './views/Posts';
+import Todos from './views/Todos';
+import NotFound from './views/NotFound';
 
 function App() {
   return (
-    <div>
-      <TodosList />
-      <hr />
-      <PostsList />
-      <hr />
-      <UsersList />
-    </div>
+    <>
+      <Routes>
+        <Route path='/' element={ <Layout /> }>
+          <Route index element={ <Home /> } />
+          <Route path='users' element={ <Users /> } />
+          <Route path='posts' element={ <Posts /> } />
+          <Route path='todos' element={ <Todos /> } />
+          <Route path='*' element={ <NotFound /> } />
+        </Route>        
+      </Routes>
+    </>
   );
 }
 

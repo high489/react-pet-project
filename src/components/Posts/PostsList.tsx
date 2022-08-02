@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react';
 import { IPost } from '../../models/IPost';
-import PostItem from './PostItem';
+import { PostItem } from './PostItem';
 import { 
   useGetPostsQuery, 
   useCreatePostMutation, 
@@ -48,4 +48,4 @@ const PostsList: FC = () => {
   );
 };
 
-export default PostsList;
+export { PostsList };
