@@ -1,22 +1,22 @@
 import React, { FC } from 'react';
 import { Outlet } from 'react-router-dom';
-import { MyLink } from './MyLink';
+import { MyNavLink } from './MyNavLink';
 
 const Layout: FC = () => {
   return (
     <>
       <header>
-        <MyLink to='/'>Home</MyLink>
-        <MyLink to='/users'>Users</MyLink>
-        <MyLink to='/posts'>Posts</MyLink>
-        <MyLink to='/todos'>Todos</MyLink>
+        <MyNavLink to='/'>Home</MyNavLink>
+        <MyNavLink to='/users'>Users</MyNavLink>
+        <MyNavLink to='/posts'>Posts</MyNavLink>
+        <MyNavLink to='/todos'>Todos</MyNavLink>
       </header>
 
       <main>
         <Outlet />
       </main>
       
-      <footer>Footer</footer>
+      {/* <footer>Footer</footer> */}
     </>    
   );
 };

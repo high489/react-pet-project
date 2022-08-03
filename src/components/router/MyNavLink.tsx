@@ -1,19 +1,21 @@
 import React, { FC } from 'react';
 import { Link, useMatch } from 'react-router-dom';
 
-interface MyLinkProps {
-  children: string;
+interface MyNavLinkProps {
+  children: any;
   to: string;
 }
 
-const MyLink: FC<MyLinkProps> = ({children, to}) => {
+const MyNavLink: FC<MyNavLinkProps> = ({children, to}) => {
   const match = useMatch(to)
 
   return (
     <Link
       to={to}
       style={{
-        color: match ? 'red' : 'black'
+        textDecoration: 'none',
+        color: match ? 'red' : 'black',
+        marginRight: '5px'
       }}
     >
       {children}
@@ -21,4 +23,4 @@ const MyLink: FC<MyLinkProps> = ({children, to}) => {
   );
 };
 
-export { MyLink };
+export { MyNavLink };

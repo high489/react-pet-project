@@ -9,4 +9,4 @@ const Todos: FC = () => {
   );
 };
 
-export default Todos;
+export { Todos };

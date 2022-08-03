@@ -8,4 +8,4 @@ const NotFound: FC = () => {
   );
 };
 
-export default NotFound;
+export { NotFound };

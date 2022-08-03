@@ -1,31 +1,25 @@
 import React, { FC, useState } from 'react';
-import { IPost } from '../../models/IPost';
-import { PostItem } from './PostItem';
+import { IPost } from '../../../models/IPost';
+import { PostsListItem } from './PostsListItem';
 import { 
   useGetPostsQuery, 
   useCreatePostMutation, 
-  useUpdatePostMutation, 
   useDeletePostMutation
-} from '../../store';
+} from '../../../store';
+import { useNavigate } from 'react-router-dom';
 
 const PostsList: FC = () => {
   const [limit, setLimit] = useState(30)
   const {data: posts, error, isLoading} = useGetPostsQuery(limit)
-  const [createPost, {}] = useCreatePostMutation()
-  const [updatePost, {}] = useUpdatePostMutation()
+  const navigate = useNavigate()
   const [deletePost, {}] = useDeletePostMutation()
-
-  const handleCreate = async () => {
-    const title = prompt()
-    await createPost({title, body: title} as IPost)
-  }
 
   const handleRemove = (post: IPost) => {
     deletePost(post)
   }
 
-  const handleUpdate = (post: IPost) => {
-    updatePost(post)
+  const navigateToCreatePostView = (e: React.MouseEvent<HTMLButtonElement>) => {
+    navigate('/posts/new', { replace: true })
   }
 
   return (
@@ -33,16 +27,15 @@ const PostsList: FC = () => {
       <div className="posts__list">
         {isLoading && <h1>Loading...</h1>}
         {error && <h1>Error</h1>}
-        {posts && posts.map((post, index) =>
-          <PostItem 
+        {posts?.map((post, index) =>
+          <PostsListItem 
             key={post.id}
             number={index + 1}
             post={post}
             remove={handleRemove}
-            update={handleUpdate}
-          />  
-        )}
-        <button onClick={handleCreate}>Add new post</button>
+          />
+        )}<hr/>
+        <button onClick={navigateToCreatePostView}>Create new post</button>
       </div>
     </div>
   );
