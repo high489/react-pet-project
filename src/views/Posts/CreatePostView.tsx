@@ -1,5 +1,5 @@
 import React from 'react';
-import { CreatePost } from '../../components/Posts/SinglePost/CreatePost';
+import { CreatePost } from '../../components/Posts/SinglePost';
 
 const CreatePostView = () => {
   return (
